@@ -1,0 +1,21 @@
+.full-exp-component {
+  align-items: center;
+  text-align: center;
+  margin-top: 5rem;
+  margin-left: 30%;
+}
+
+.exp-heading {
+  font-size: 30px;
+  font-style: inherit;
+}
+.exp-fields-input {
+  padding: 20px;
+}
+.exp-form {
+  margin-left: 25%;
+  border: 15px solid #025e5e;
+  padding: 20px;
+  margin: 20px;
+  width: 50%;
+}

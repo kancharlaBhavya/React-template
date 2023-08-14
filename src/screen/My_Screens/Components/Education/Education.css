@@ -1,21 +1,22 @@
-.full-edu-component{
-    align-items: center;
-    text-align: center  ;
-    margin-top: 5rem;
+.full-edu-component {
+  align-items: center;
+  text-align: center;
+  margin-top: 5rem;
+  margin-left: 30%;
 }
 
-.edu-heading{
-    font-size: 30px;
-    font-style:inherit;
+.edu-heading {
+  font-size: 30px;
+  font-style: inherit;
 }
-.edu-fields-input{
-    padding: 20px
+.edu-fields-input {
+  padding: 20px;
 }
 
 .edu-form {
-    margin-left: 25%;
-    border: 15px solid #025e5e;
-    padding: 20px;
-    margin: 20px;
-    width: 50%;
+  margin-left: 25%;
+  border: 15px solid #025e5e;
+  padding: 20px;
+  margin: 20px;
+  width: 50%;
 }
