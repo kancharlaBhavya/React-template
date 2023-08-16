@@ -11,10 +11,11 @@ import CookiePolicy from "../../screen/CookiePolicy";
 
 import HomePage from "../../screen/My_Screens/Pages/Home";
 import Add_Profile from "../../screen/My_Screens/Pages/Add_Profile";
-import Experence from "../../screen/My_Screens/Components/Experence/Experence";
-import Education from "../../screen/My_Screens/Components/Education/Education";
+import Experience from "../../screen/My_Screens/Components/Experence/Experience";
 import Display from "../../screen/My_Screens/Pages/Display";
 import Skills from "../../screen/My_Screens/Components/Skill/Skills";
+import Education from "../../screen/My_Screens/Components/Education/Education";
+import Dropdown from "../../screen/My_Screens/Components/Dropdown";
 
 const Navigator = () => {
   return (
@@ -32,9 +33,10 @@ const Navigator = () => {
       <Route path="/add" element={<Add_Profile />} />
       <Route path="/display" element={<Display />} />
       {/* components */}
-      <Route path="/exp" element={<Experence />} />
+      <Route path="/exp" element={<Experience />} />
       <Route path="/edu" element={<Education />} />
       <Route path="/skill" element={<Skills />} />
+      <Route path="/drop" element={<Dropdown/>}/>
     </Routes>
   );
 };

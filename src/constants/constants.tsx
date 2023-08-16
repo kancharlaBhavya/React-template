@@ -24,7 +24,9 @@ const CONSTANTS = {
   USER_TYPE: "user-type",
   COUNTRY: "country",
   I18NEXTLNG : "i18nextLng",
-  LINKED_IN:"Linked_In"
+  LINKED_IN:"Linked_In",
+  EDUCATION:"Add_Education",
+  EXPERIENCE:"Add_Experience"
 };
 
 export default CONSTANTS;

@@ -1,4 +1,4 @@
-import { createStore } from 'redux';
+import { createStore } from "redux";
 import { loadingActionReducer } from './reducer';
 
 type RootState = ReturnType<typeof loadingActionReducer>;

@@ -1,3 +1,4 @@
+import { types } from "@babel/core";
 import { PUSH_NOTIFICATION } from "../constants/actions";
 import COMMON from "../constants/common";
 import { ACCESS_TOEKN, addEducation, LOADER } from "./actions";
@@ -6,6 +7,8 @@ import {
   DELETE_EDUCATION,
   ADD_EXPERIENCE,
   DELETE_EXPERIENCE,
+  ADD_SKILL,
+  DELETE_SKILL
 } from "./actions";
 
 // Reducer
@@ -18,7 +21,8 @@ export interface NotificationProps {
 }
 interface State {
   educationList: any[];
-  experenceList: any[];
+  experienceList: any[];
+  skillList:any[];
   isLoading: boolean;
   notification: {};
   isAnonymous: boolean;
@@ -29,13 +33,17 @@ type Action = {
     | typeof ADD_EDUCATION
     | typeof DELETE_EDUCATION
     | typeof ADD_EXPERIENCE
+    | typeof DELETE_EXPERIENCE
     | typeof LOADER
-    | typeof PUSH_NOTIFICATION;
+    | typeof PUSH_NOTIFICATION
+    | typeof ADD_SKILL
+    | typeof DELETE_SKILL;
   payload: any;
 };
 const initialState: State = {
   educationList: [],
-  experenceList: [],
+  experienceList: [],
+  skillList:[],
   isLoading: false,
   notification: {},
   isAnonymous: true,
@@ -60,16 +68,28 @@ export const loadingActionReducer = (state = initialState, action) => {
     case ADD_EXPERIENCE:
       return {
         ...state,
-        experienceList: [...state.experenceList, action.payload],
+        experienceList: [...state.experienceList, action.payload],
       };
+      case ADD_SKILL:
+        return {
+          ...state,
+          skillList: [...state.skillList, action.payload],
+        };
     case DELETE_EXPERIENCE:
       return {
         ...state,
-        experienceList: state.experenceList.filter(
+        experienceList: state.experienceList.filter(
           (exp, index) => index !== action.payload
         ),
       };
-
+  
+    case DELETE_SKILL:
+      return {
+        ...state,
+        skillList: state.skillList.filter(
+          (skill, index) => index !== action.payload
+        ),
+      };
     case LOADER:
       return {
         ...state,

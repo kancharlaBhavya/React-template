@@ -1,8 +1,10 @@
 import { PUSH_NOTIFICATION } from "../constants/actions";
 export const ADD_EDUCATION = "ADD_EDUCATION";
 export const DELETE_EDUCATION = "DELETE_EDUCATION";
-export const ADD_EXPERIENCE = "ADD_EXPERENCE";
-export const DELETE_EXPERIENCE = "DELETE_EXPERENCE";
+export const ADD_EXPERIENCE = "ADD_experience";
+export const DELETE_EXPERIENCE = "DELETE_experience";
+export const DELETE_SKILL="DELETE_SKILL";
+export const ADD_SKILL="ADD_SKILL";
 
 // Action Type
 export const LOADER = "LOADER";
@@ -56,6 +58,18 @@ export const addExperience = (data) => {
 export const deleteExperience = (index) => {
   return {
     type: DELETE_EXPERIENCE,
+    payload: index,
+  };
+};
+export const addSkill = (data) => {
+  return {
+    type: ADD_SKILL,
+    payload: data,
+  };
+};
+export const deleteSkill = (index) => {
+  return {
+    type: DELETE_SKILL,
     payload: index,
   };
 };

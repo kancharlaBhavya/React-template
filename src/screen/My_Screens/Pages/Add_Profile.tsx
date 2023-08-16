@@ -1,6 +1,6 @@
 import React from 'react'
 import Education from '../Components/Education/Education'
-import Experence from '../Components/Experence/Experence'
+import Experience from '../Components/Experence/Experience'
 import Skills from '../Components/Skill/Skills'
 
 function Add_Profile() {
@@ -10,7 +10,7 @@ function Add_Profile() {
         <Education/>
       </div>
       <div className='add-exp-sec'>
-        <Experence/>
+        <Experience/>
       </div>
       <div className='add-skills-sec'>
         <Skills/>

@@ -12,13 +12,14 @@ import avatar from "../../../assets/icon/avatar.png";
 import { Avatar } from "@mui/material";
 import React, { useEffect, useRef, useState } from "react";
 import "./style.scss";
-import { useNavigate } from "react-router-dom";
+import { useHref, useNavigate } from "react-router-dom";
 import { useKeycloak } from "@react-keycloak/web";
 import CONSTANTS from "../../../constants/constants";
 import { useTranslation } from "react-i18next";
 import COMMON from "../../../constants/common";
 import { makeStyles } from "@mui/styles";
 import { LinkedIn } from "@mui/icons-material";
+import { Dropdown } from "react-bootstrap";
 
 const useStyles = makeStyles((theme) => ({
   userProfile: {
@@ -76,7 +77,7 @@ const Header = () => {
         return t(COMMON.PRIVACY_POLICY);
       case "/cookiepolicy":
         return t(COMMON.COOKIE_POLICY);
-      case "/homePage" :
+      case "/homePage":
         return t(COMMON.LINKED_IN);
       default:
         return t(CONSTANTS.DEFAULT_MSG);
@@ -127,50 +128,68 @@ const Header = () => {
 
   const renderUserProfileMenu = () => {
     return (
-      <div style={{ display: "flex", alignItems: "center" }}>
-        <Typography>{sessionStorage.getItem(CONSTANTS.USER_EMAIL)}</Typography>
-        <span style={{ alignItems: "center" }}>
-          <Button
-            className={classes.userProfile}
-            aria-controls={open ? "basic-menu" : undefined}
-            aria-haspopup="true"
-            aria-expanded={open ? "true" : undefined}
-            onClick={handleClick}
-          >
-            {!imageSrc && keycloak.authenticated ? (
-              <Avatar />
-            ) : imageSrc && keycloak.authenticated ? (
-              <img alt={CONSTANTS.PROFILE} src={avatar} />
-            ) : (
-              <Avatar />
-            )}
-          </Button>
+      <>
+        <div style={{ display: "flex", alignItems: "center" }}>
+          <Typography>
+            {sessionStorage.getItem(CONSTANTS.USER_EMAIL)}
+          </Typography>
+          <span style={{ alignItems: "center" }}>
+            <Button
+              className={classes.userProfile}
+              aria-controls={open ? "basic-menu" : undefined}
+              aria-haspopup="true"
+              aria-expanded={open ? "true" : undefined}
+              onClick={handleClick}
+            >
+              {!imageSrc && keycloak.authenticated ? (
+                <Avatar />
+              ) : imageSrc && keycloak.authenticated ? (
+                <img alt={CONSTANTS.PROFILE} src={avatar} />
+              ) : (
+                <Avatar />
+              )}
+            </Button>
 
-          <Menu
-            id="basic-menu"
-            anchorEl={anchorEl}
-            open={open}
-            onClose={handleClose}
-            MenuListProps={{
-              "aria-labelledby": "basic-button",
-            }}
-          >
-            {keycloak.authenticated ? (
-              <>
-                <MenuItem onClick={() => handleNavigation("/my-profile")}>
-                  <span>{t(CONSTANTS.PROFILE)}</span>
-                </MenuItem>
-                <MenuItem onClick={handleLogout}>
-                  <span>{t(CONSTANTS.LOGOUT)}</span>
-                </MenuItem>
-                <MenuItem onClick={() => handleNavigation("/settings")}>
-                  <span>{t(CONSTANTS.SETTINGS)}</span>
-                </MenuItem>
-              </>
-            ) : null}
-          </Menu>
-        </span>
-      </div>
+            <Menu
+              id="basic-menu"
+              anchorEl={anchorEl}
+              open={open}
+              onClose={handleClose}
+              MenuListProps={{
+                "aria-labelledby": "basic-button",
+              }}
+            >
+              {keycloak.authenticated ? (
+                <>
+                  <MenuItem onClick={() => handleNavigation("/my-profile")}>
+                    <span>{t(CONSTANTS.PROFILE)}</span>
+                  </MenuItem>
+                  <MenuItem onClick={handleLogout}>
+                    <span>{t(CONSTANTS.LOGOUT)}</span>
+                  </MenuItem>
+                  <MenuItem onClick={() => handleNavigation("/settings")}>
+                    <span>{t(CONSTANTS.SETTINGS)}</span>
+                  </MenuItem>
+                </>
+              ) : null}
+            </Menu>
+          </span>
+      
+       
+        <div className="dropdownbutton789" >
+        { window.location.pathname === "/homePage" && (
+          <Dropdown>
+            <Dropdown.Toggle variant="success">Update</Dropdown.Toggle>
+            <Dropdown.Menu>
+              <Dropdown.Item onClick={()=>navigate("/edu")} >Education</Dropdown.Item>
+              <Dropdown.Item onClick={()=>navigate("/exp")}>Experience</Dropdown.Item>
+              <Dropdown.Item onClick={()=>navigate("/skills")}>Skills</Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
+       )} </div>
+         </div>
+      </>
+    
     );
   };
 

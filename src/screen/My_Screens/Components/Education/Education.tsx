@@ -1,4 +1,4 @@
-import { Button } from "@mui/base";
+import { Button } from "@mui/material";
 import { Handshake } from "@mui/icons-material";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -129,6 +129,7 @@ function Education() {
           </div>
 
           <Button onClick={handleSave}>Save</Button>
+          <Button onClick={()=>navigate("/homePage")}>Done</Button>
         </div>
       </div>
       <div className="display-edu-list">
