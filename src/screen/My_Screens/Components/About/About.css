@@ -1,0 +1,10 @@
+.about{
+    margin-left: 25%;
+  border: 15px solid #bcd7d7;
+  padding: 20px;
+  margin: 20px;
+  width:94%;
+}
+.about-edit{
+    display: flex;
+}

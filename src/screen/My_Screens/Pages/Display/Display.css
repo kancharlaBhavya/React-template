@@ -1,0 +1,33 @@
+.display-edu-list-displaypage {
+  margin-left: 25%;
+  border: 15px solid #bcd7d7;
+  padding: 20px;
+  margin: 10px;
+  width: 95%
+}
+.two-divs{
+    display: flex;
+}
+.experience-section-display {
+  margin-left: 25%;
+  border: 15px solid #bcd7d7;
+  padding: 20px;
+  margin: 10px;
+  width: 95%
+}
+.display-skills-list-displaypage{
+    margin-left: 25%;
+    border: 15px solid #bcd7d7;
+    padding: 20px;
+    margin: 10px;
+    width: 95%
+}
+
+li.exp-list-name-display h5 {
+  margin-left: 1rem;
+  color: rgb(3, 2, 2);
+}
+li.exp-list-name-display h6 {
+  margin-left: 1rem;
+  color: rgb(3, 2, 2);
+}

@@ -9,13 +9,14 @@ import TermsOfUse from "../../screen/TermsOfUse";
 import PrivacyPolicy from "../../screen/PrivacyPolicy";
 import CookiePolicy from "../../screen/CookiePolicy";
 
-import HomePage from "../../screen/My_Screens/Pages/Home";
-import Add_Profile from "../../screen/My_Screens/Pages/Add_Profile";
+import HomePage from "../../screen/My_Screens/Pages/HomePage/Home";
+import Add_Profile from "../../screen/My_Screens/Pages/Add_Profile_section/Add_Profile";
 import Experience from "../../screen/My_Screens/Components/Experence/Experience";
-import Display from "../../screen/My_Screens/Pages/Display";
+import Display from "../../screen/My_Screens/Pages/Display/Display";
 import Skills from "../../screen/My_Screens/Components/Skill/Skills";
 import Education from "../../screen/My_Screens/Components/Education/Education";
-import Dropdown from "../../screen/My_Screens/Components/Dropdown";
+import Dropdown from "../../screen/My_Screens/Components/extrafiles/Dropdown";
+import ProfilePic from "../../screen/My_Screens/Components/Profile/ProfilePic";
 
 const Navigator = () => {
   return (
@@ -37,6 +38,7 @@ const Navigator = () => {
       <Route path="/edu" element={<Education />} />
       <Route path="/skill" element={<Skills />} />
       <Route path="/drop" element={<Dropdown/>}/>
+      <Route path="/profile"element={<ProfilePic/>}/>
     </Routes>
   );
 };

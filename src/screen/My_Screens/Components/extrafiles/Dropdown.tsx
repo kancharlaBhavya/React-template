@@ -2,14 +2,14 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import Dropdown from 'react-bootstrap/Dropdown';
 
-export default function App() {
+export default function Dropdown123() {
 return (
 	<div style={{ width: 700,
 				padding: 30 }}>
 
 	<Dropdown>
 		<Dropdown.Toggle variant="success">
-		Update
+		Update 
 		</Dropdown.Toggle>
 		<Dropdown.Menu>
 		<Dropdown.Item href="/edu">

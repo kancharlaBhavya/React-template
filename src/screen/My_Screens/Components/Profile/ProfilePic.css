@@ -1,0 +1,47 @@
+/* CardFlip styles */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .full-profile-details {
+    background-color: transparent;
+    width: 200px;
+    height: 200px;
+    perspective: 1000px;
+    border: 5px solid #bcd7d7;
+
+  }
+  
+  .profile-details {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  }
+  
+  .full-profile-details:hover .profile-details {
+    transform: rotateY(180deg);
+  }
+  
+  .profile-front-side, .profile-back-side{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  
+  .profile-front-side{
+    background-color: #bbb;
+    color: black;
+  }
+  
+  .profile-back-side{
+    background-color: #627a7a;
+    color: white;
+    transform: rotateY(180deg);
+  }
+ 

@@ -1,7 +1,7 @@
 import React from 'react'
-import Education from '../Components/Education/Education'
-import Experience from '../Components/Experence/Experience'
-import Skills from '../Components/Skill/Skills'
+import Education from '../../Components/Education/Education'
+import Experience from '../../Components/Experence/Experience'
+import Skills from '../../Components/Skill/Skills'
 
 function Add_Profile() {
   return (
